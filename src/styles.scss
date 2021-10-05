@@ -1,0 +1,104 @@
+/* You can add global styles to this file, and also import other style files */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  html,body {
+    height: 100%;
+    width: 100%;
+    font-family: Roboto, 'Helvetica Neue', sans-serif;
+    display: flex;
+}
+  .app-container {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .title {
+    font-weight: bold;
+  }
+
+
+  .app-container router-outlet ~ *{
+    width: 50%;
+    background-color: rgb(146, 95, 28);
+    display: flex;
+    padding: 20px;
+    flex-direction: column;
+  }
+
+  .btn {
+    display: inline-block;
+    background: #008CBA;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 15px;
+    font-family: inherit;
+    &:focus {
+        outline: none;
+      }
+      &:disabled {
+        background-color: #e7e7e7;
+      }
+      
+      &:active {
+        transform: scale(0.98);
+      }
+      
+      &.btn-block {
+        display: block;
+        width: 100%;
+        margin: 10px 0;
+      }
+  }
+
+  #snackbar {
+    visibility: hidden;
+    min-width: 250px;
+    margin-bottom: 30px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 2px;
+    padding: 16px;
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    bottom: 30px;
+    transform: translate(-50%,40%);
+    font-size: 17px;
+  }
+  
+  #snackbar.show {
+    visibility: visible;
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  }
+  
+  @-webkit-keyframes fadein {
+    from {bottom: 0; opacity: 0;} 
+    to {bottom: 30px; opacity: 1;}
+  }
+  
+  @keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+  }
+  
+  @-webkit-keyframes fadeout {
+    from {bottom: 30px; opacity: 1;} 
+    to {bottom: 0; opacity: 0;}
+  }
+  
+  @keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+  }

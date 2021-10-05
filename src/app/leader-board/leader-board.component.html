@@ -1,0 +1,27 @@
+<div class="quiz_box">
+    <header>
+        <div class="title">Leader Board</div>
+        <div class="time_line"><button class="btn" (click)="logout()">Logout</button></div>
+    </header>
+    <section>
+        <table id="leaderboard">
+            <tr>
+              <th>Rank</th>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Score(10)</th>
+            </tr>
+            <tr *ngFor="let leader of topList;let index = index">
+              <th>{{index + 1}}</th>
+              <td>{{leader.name}}</td>
+              <td>{{leader.email}}</td>
+              <td>{{leader.score}}</td>
+            </tr>
+          </table>
+    </section>
+    <footer>
+        <div class="total_que">
+            <button class="btn" (click)="restart()">Restart quiz</button>
+        </div>
+    </footer>
+</div>

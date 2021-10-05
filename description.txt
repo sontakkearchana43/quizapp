@@ -1,0 +1,19 @@
+------ Requirements ------------
+   - Node - Node is like tool or enivro -
+   - NPM by using we can get the dependc 
+   - angular-cli -  
+
+---------- Setup of angular application --- 
+   - ng new quizapp
+       - TS files are generated 
+       - webpack is nothing module bundler to compile the TS files into js files (Browser only supports JS file)
+       - Dependencies are also installed.
+
+--------- quizapp ----------- 
+      - login
+      - signup 
+      - quiz
+      - leader-board
+       
+--------------- DB ---------
+      JSON-SERVER

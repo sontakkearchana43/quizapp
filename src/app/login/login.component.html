@@ -1,0 +1,21 @@
+<div class="quiz_box">
+    <header>
+        <div class="title">Login</div>
+        <div class="time_line"><button class="btn" (click)="navigate()">Register</button></div>
+    </header>
+    <section>
+        <form [formGroup]="loginForm" (ngSubmit)="submitLogin()">
+            <div class="form-field">
+                <label>Email</label>
+                <input type="email" placeholder="Email" formControlName="email"/>
+            </div> 
+            <div class="form-field">
+                <label>Password</label>
+                <input type="password" placeholder="password" formControlName="password" />
+            </div>
+            <div class="form-field">
+               <input type='submit' value='Login' class='btn btn-block' [disabled]="loginForm.invalid" />
+            </div>
+        </form>
+    </section>
+</div>

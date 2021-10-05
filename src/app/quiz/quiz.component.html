@@ -1,0 +1,39 @@
+<div class="quiz_box" *ngIf="currentQstnJson?.question else quizComplete">
+    <header>
+        <div class="title">Quiz Application</div>
+        <div class="time_line"><button class="btn" (click)="logout()">Logout</button></div>
+    </header>
+    <section>
+        <div class="que_text">
+            <span>{{currentQstnJson?.question}}</span>
+        </div>
+        <div class="option_list">
+            <div class="option" *ngFor="let opt of currentQstnJson?.options;let index = index" (click)="onAnswerClick(index)" #optionRef><span>{{opt}}</span></div>
+        </div>
+    </section>
+    <footer>
+        <div class="total_que">
+            <span><p>{{currentQuestionIndex + 1}}</p> of <p>{{questionsList.length}}</p> Questions</span>
+        </div>
+    </footer>
+</div>
+<ng-template #quizComplete>
+<div class="quiz_box">
+    <header>
+        <div class="title">Quiz Application</div>
+        <div class="time_line"><button class="btn" (click)="logout()">Logout</button></div>
+    </header>
+    <section>
+         <div class="complte">
+             <p>Your score</p>
+             <p>{{scoreUpdate}}/10</p>     
+         </div>
+    </section>
+    <footer>
+        <div class="total_que">
+            <button class="btn" (click)="restart()">Restart</button>
+            <button class="btn" (click)="navigate()">Leader board</button>
+        </div>
+    </footer>
+</div>
+</ng-template>
